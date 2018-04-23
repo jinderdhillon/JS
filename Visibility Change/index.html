@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Visibility : Visible</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+
+        document.addEventListener('visibilitychange', function () {
+            // fires when user switches tabs, apps, goes to homescreen, etc.
+            if (document.visibilityState === 'hidden') {
+                document.title = 'Visibility : Not Visible'
+            }
+            // fires when app transitions from prerender, user returns to the app / tab.
+            if (document.visibilityState === 'visible') {
+                document.title = 'Visibility : Visible';
+            }
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

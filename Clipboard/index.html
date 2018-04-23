@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>clipboard.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/clipboard.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>copy & cut text to clipboard</h1>
+        <textarea id="bar" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit at, ipsa excepturi odit nulla magni molestias officiis voluptatibus nam perspiciatis maiores, totam laborum rem. Laborum, deleniti veniam? Molestiae, nobis eaque.</textarea>
+        <br>
+        <!-- Trigger -->
+        <button class="btn" data-clipboard-target="#bar">
+            Copy to clipboard
+        </button>
+        <button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
+            Cut to clipboard
+        </button>
+    </div>
+    <footer align="center">
+        <a href="https://zenorocha.github.io/clipboard.js">clipboard.js</a> <span>v2.0.0</span>
+    </footer>
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    </script>
+</body>
+
+</html>

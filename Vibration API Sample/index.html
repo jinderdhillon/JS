@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vibration API Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Vibration API Sample</h1>
+
+        <button class="btn" onclick="exp1">
+            Simple Vibration
+        </button>
+        <button class="btn" onclick="exp2">
+            Vibration Patern
+        </button>
+        <button class="btn" onclick="exp3">
+            Vibration Stop
+        </button>
+    </div>
+    <footer align="center">
+        <a href="https://googlechrome.github.io/samples/vibration/">clipboard.js</a>
+        <span>v2.0.0</span>
+    </footer>
+    <script>
+        function exp1() {
+            navigator.vibrate([500]);
+        }
+
+        function exp2() {
+            navigator.vibrate([500, 250, 500, 250, 500]);
+        }
+
+        function exp2() {
+            navigator.vibrate(0);
+        }
+
+    </script>
+</body>
+
+</html>
